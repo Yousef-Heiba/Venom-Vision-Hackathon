@@ -12,6 +12,7 @@ At a high level, Venom-Vision explores how low-cost hardware can be used to buil
 - An **ESP32-CAM** module that acts as the robot’s “eyes,” running an embedded machine-learning model.
 - A **Nano-based main controller** that acts as the “brain,” translating detection results into motion and behaviour.
 - A dedicated **data-collection sketch** for capturing camera images to train custom models (e.g., using Edge Impulse).
+- Object classification/detection embedded ML model with 97% accuraccy and a response time of 165ms processed on the ESP32 Cam
 
 The goal is to create a small, self-contained platform for experimenting with embedded AI, legged locomotion, and reactive behaviours.
 
@@ -41,7 +42,7 @@ The **ESP32_CAM** firmware is responsible for:
 
 - Initializing and configuring the camera.
 - Capturing image frames from the robot’s point of view.
-- Running an on-device ML model (image classification or object detection).
+- Running an on-device ML model (object classification).
 - Sending summarized results to the Nano controller.
 
 Because inference runs directly on the ESP32-CAM, Venom-Vision doesn’t need a tethered computer: perception and decision-making happen entirely on the robot, with the Nano interpreting semantic cues like “target ahead” or “obstacle close.”
